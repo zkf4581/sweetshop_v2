@@ -948,32 +948,29 @@ body.rainbow-mode .price {
 /* 欢迎消息 */
 .welcome-message {
     position: fixed;
-    top: 50%;
+    top: 100px;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     background: linear-gradient(135deg, #ff6b9d 0%, #feca57 100%);
     color: white;
-    padding: 30px 60px;
+    padding: 15px 40px;
     border-radius: 50px;
-    font-size: 28px;
+    font-size: 20px;
     font-family: 'Ma Shan Zheng', cursive;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
     z-index: 10000;
-    animation: welcomeBounce 0.5s ease-out;
+    animation: slideDown 0.5s ease-out;
     transition: opacity 0.5s ease;
 }
 
-@keyframes welcomeBounce {
+@keyframes slideDown {
     0% {
         opacity: 0;
-        transform: translate(-50%, -50%) scale(0);
-    }
-    50% {
-        transform: translate(-50%, -50%) scale(1.1);
+        transform: translateX(-50%) translateY(-100%);
     }
     100% {
         opacity: 1;
-        transform: translate(-50%, -50%) scale(1);
+        transform: translateX(-50%) translateY(0);
     }
 }
 

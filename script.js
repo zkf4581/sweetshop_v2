@@ -284,7 +284,7 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(() => {
                 welcome.remove();
             }, 500);
-        }, 3000);
+        }, 2000);
     }, 500);
 
     // 添加CSS动画
