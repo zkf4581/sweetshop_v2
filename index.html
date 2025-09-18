@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>甜蜜时光 - 手工甜品店</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=ZCOOL+KuaiLe&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>🍰 甜蜜时光</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">首页</a></li>
+                <li><a href="#products">产品</a></li>
+                <li><a href="#about">关于我们</a></li>
+                <li><a href="#contact">联系我们</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主页横幅 -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2 class="hero-title">纯手工制作的幸福滋味</h2>
+            <p class="hero-subtitle">💕 每一份甜品都是用心的作品 💕</p>
+            <button class="btn-primary">浏览产品 →</button>
+        </div>
+        <div class="hero-decoration">
+            <span class="deco-item" style="--i: 1;">🧁</span>
+            <span class="deco-item" style="--i: 2;">🍪</span>
+            <span class="deco-item" style="--i: 3;">🍩</span>
+            <span class="deco-item" style="--i: 4;">🍮</span>
+        </div>
+    </section>
+
+    <!-- 特色产品 -->
+    <section class="featured-section">
+        <div class="container">
+            <h2 class="section-title">今日特色</h2>
+            <div class="featured-grid">
+                <div class="featured-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=400&h=300&fit=crop" alt="草莓蛋糕">
+                        <div class="card-overlay">
+                            <h3>草莓奶油蛋糕</h3>
+                            <p class="price">¥128</p>
+                            <p class="description">新鲜草莓配上绵密奶油</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="featured-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1569864358642-9d1684040f43?w=400&h=300&fit=crop" alt="马卡龙">
+                        <div class="card-overlay">
+                            <h3>法式马卡龙</h3>
+                            <p class="price">¥15/个</p>
+                            <p class="description">多种口味，甜而不腻</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="featured-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=400&h=300&fit=crop" alt="提拉米苏">
+                        <div class="card-overlay">
+                            <h3>提拉米苏</h3>
+                            <p class="price">¥68</p>
+                            <p class="description">意式经典，浓郁咖啡香</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 产品分类 -->
+    <section id="products" class="products-section">
+        <div class="container">
+            <h2 class="section-title">产品分类</h2>
+            <div class="category-tabs">
+                <button class="tab-btn active" data-category="cakes">蛋糕</button>
+                <button class="tab-btn" data-category="desserts">甜点</button>
+                <button class="tab-btn" data-category="drinks">饮品</button>
+                <button class="tab-btn" data-category="breads">面包</button>
+            </div>
+            <div class="products-grid">
+                <div class="product-card" data-category="cakes">
+                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=300&h=300&fit=crop" alt="巧克力蛋糕">
+                    <div class="product-overlay">
+                        <h4>巧克力蛋糕</h4>
+                        <p class="price">¥98</p>
+                    </div>
+                </div>
+                <div class="product-card" data-category="cakes">
+                    <img src="https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?w=300&h=300&fit=crop" alt="芝士蛋糕">
+                    <div class="product-overlay">
+                        <h4>芝士蛋糕</h4>
+                        <p class="price">¥88</p>
+                    </div>
+                </div>
+                <div class="product-card" data-category="desserts">
+                    <img src="https://images.unsplash.com/photo-1470124182917-cc6e71b22ecc?w=300&h=300&fit=crop" alt="焦糖布丁">
+                    <div class="product-overlay">
+                        <h4>焦糖布丁</h4>
+                        <p class="price">¥28</p>
+                    </div>
+                </div>
+                <div class="product-card" data-category="desserts">
+                    <img src="https://images.unsplash.com/photo-1509365465985-25d11c17e812?w=300&h=300&fit=crop" alt="泡芙">
+                    <div class="product-overlay">
+                        <h4>奶油泡芙</h4>
+                        <p class="price">¥12</p>
+                    </div>
+                </div>
+                <div class="product-card" data-category="drinks">
+                    <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=300&h=300&fit=crop" alt="拿铁">
+                    <div class="product-overlay">
+                        <h4>香草拿铁</h4>
+                        <p class="price">¥32</p>
+                    </div>
+                </div>
+                <div class="product-card" data-category="breads">
+                    <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=300&h=300&fit=crop" alt="可颂">
+                    <div class="product-overlay">
+                        <h4>黄油可颂</h4>
+                        <p class="price">¥18</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我们 -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">关于甜蜜时光</h2>
+                    <p>我们是一家专注于手工甜品制作的精品店。每一份甜品都由经验丰富的烘焙师精心制作，选用优质原材料，不添加防腐剂，让您品尝到最纯粹的美味。</p>
+                    <p>从2018年开店至今，我们始终坚持"用心做好每一份甜品"的理念，为顾客带来幸福的味觉体验。</p>
+                    <div class="features">
+                        <div class="feature-item" style="--i: 0;">
+                            <span class="feature-icon">🎂</span>
+                            <span>纯手工制作</span>
+                        </div>
+                        <div class="feature-item" style="--i: 1;">
+                            <span class="feature-icon">🥛</span>
+                            <span>优质原材料</span>
+                        </div>
+                        <div class="feature-item" style="--i: 2;">
+                            <span class="feature-icon">🍓</span>
+                            <span>新鲜水果</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=500&h=400&fit=crop" alt="店铺内景">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系方式 -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">联系我们</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <h3>📍 地址</h3>
+                        <p>上海市静安区南京西路1234号</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>📞 电话</h3>
+                        <p>021-12345678</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>⏰ 营业时间</h3>
+                        <p>周一至周日 10:00 - 22:00</p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>预订 & 留言</h3>
+                    <form>
+                        <input type="text" placeholder="您的姓名" required>
+                        <input type="tel" placeholder="联系电话" required>
+                        <textarea placeholder="留言内容（如预订产品、数量、取货时间等）" rows="5" required></textarea>
+                        <button type="submit" class="btn-primary">发送消息</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>🍰 甜蜜时光</h3>
+                    <p>用甜品传递幸福</p>
+                </div>
+                <div class="footer-social">
+                    <a href="#" aria-label="微信">📱</a>
+                    <a href="#" aria-label="微博">💬</a>
+                    <a href="#" aria-label="小红书">📕</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 甜蜜时光. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
