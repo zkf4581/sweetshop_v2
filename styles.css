@@ -22,7 +22,10 @@ body {
     font-family: 'Comfortaa', 'ZCOOL KuaiLe', cursive, sans-serif;
     line-height: 1.6;
     color: var(--text-dark);
-    background: var(--bg-cream);
+    background:
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><pattern id="p" width="50" height="50" patternUnits="userSpaceOnUse"><text x="12" y="35" font-size="20" fill="rgba(255,200,221,0.02)" transform="rotate(-45 25 25)">🧁</text></pattern><rect width="200" height="200" fill="url(%23p)"/></svg>') fixed,
+        var(--bg-cream);
+    background-size: 200px 200px, cover;
     position: relative;
 }
 
@@ -37,6 +40,16 @@ body::before {
         radial-gradient(circle at 40% 40%, rgba(255, 192, 229, 0.1) 0%, transparent 50%);
     pointer-events: none;
     z-index: -1;
+    animation: bodyGlow 10s ease-in-out infinite;
+}
+
+@keyframes bodyGlow {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
 }
 
 .container {
@@ -47,13 +60,25 @@ body::before {
 
 /* 导航栏 */
 .navbar {
-    background: linear-gradient(to bottom, var(--bg-white), rgba(255, 255, 255, 0.95));
+    background:
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><text x="15" y="40" font-size="30" fill="rgba(255,200,221,0.35)" transform="rotate(-15 30 30)">🍰</text></svg>') 10% center/60px 60px,
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><text x="15" y="40" font-size="30" fill="rgba(255,200,221,0.35)" transform="rotate(15 30 30)">🧁</text></svg>') 90% center/60px 60px,
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><text x="15" y="40" font-size="30" fill="rgba(255,200,221,0.25)" transform="rotate(-10 30 30)">🍪</text></svg>') 30% center/60px 60px,
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><text x="15" y="40" font-size="30" fill="rgba(255,200,221,0.25)" transform="rotate(10 30 30)">🍩</text></svg>') 70% center/60px 60px,
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.98), rgba(255, 249, 252, 0.95));
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat;
     box-shadow: 0 2px 20px rgba(255, 192, 203, 0.2);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
     border-bottom: 2px solid rgba(255, 179, 217, 0.2);
+    animation: navFloat 20s ease-in-out infinite;
+}
+
+@keyframes navFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-2px); }
 }
 
 .navbar .container {
@@ -114,7 +139,14 @@ body::before {
 
 /* 主页横幅 */
 .hero {
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.85) 0%, rgba(118, 75, 162, 0.85) 100%), url('https://images.unsplash.com/photo-1486427944299-aa1a5e0def7d?w=1920&h=1080&fit=crop') center/cover;
+    background:
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><text x="35" y="65" font-size="50" fill="rgba(255,255,255,0.05)" transform="rotate(-15 50 50)">🍰</text></svg>') 5% 20%/100px 100px,
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><text x="35" y="65" font-size="50" fill="rgba(255,255,255,0.05)" transform="rotate(15 50 50)">🧁</text></svg>') 95% 80%/100px 100px,
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><text x="35" y="65" font-size="50" fill="rgba(255,255,255,0.03)" transform="rotate(30 50 50)">🍩</text></svg>') 15% 70%/100px 100px,
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><text x="35" y="65" font-size="50" fill="rgba(255,255,255,0.03)" transform="rotate(-30 50 50)">🍪</text></svg>') 85% 30%/100px 100px,
+        linear-gradient(135deg, rgba(255, 179, 217, 0.95) 0%, rgba(255, 212, 163, 0.9) 50%, rgba(255, 192, 229, 0.95) 100%),
+        url('https://images.unsplash.com/photo-1486427944299-aa1a5e0def7d?w=1920&h=1080&fit=crop') center/cover;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat, no-repeat;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -122,6 +154,55 @@ body::before {
     text-align: center;
     color: white;
     margin-top: 70px;
+    position: relative;
+    overflow: hidden;
+    animation: heroGradient 8s ease-in-out infinite;
+}
+
+@keyframes heroGradient {
+    0%, 100% {
+        background-position:
+            5% 20%,
+            95% 80%,
+            15% 70%,
+            85% 30%,
+            0% 50%,
+            center;
+        background-size:
+            100px 100px,
+            100px 100px,
+            100px 100px,
+            100px 100px,
+            200% 200%,
+            cover;
+    }
+    25% {
+        background-position:
+            10% 30%,
+            90% 70%,
+            20% 60%,
+            80% 40%,
+            50% 0%,
+            center;
+    }
+    50% {
+        background-position:
+            5% 40%,
+            95% 60%,
+            15% 50%,
+            85% 50%,
+            100% 50%,
+            center;
+    }
+    75% {
+        background-position:
+            10% 30%,
+            90% 70%,
+            20% 60%,
+            80% 40%,
+            50% 100%,
+            center;
+    }
 }
 
 .hero-content {
@@ -138,6 +219,46 @@ body::before {
     left: 0;
     pointer-events: none;
     overflow: hidden;
+}
+
+.hero-decoration::before,
+.hero-decoration::after {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    opacity: 0.1;
+    animation: float 15s infinite ease-in-out;
+}
+
+.hero-decoration::before {
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+    top: -150px;
+    left: -150px;
+    animation-delay: 0s;
+}
+
+.hero-decoration::after {
+    background: radial-gradient(circle, rgba(255,200,221,0.3) 0%, transparent 70%);
+    bottom: -150px;
+    right: -150px;
+    animation-delay: 7.5s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    25% {
+        transform: translate(100px, -50px) scale(1.1);
+    }
+    50% {
+        transform: translate(-50px, 100px) scale(0.9);
+    }
+    75% {
+        transform: translate(-100px, -30px) scale(1.05);
+    }
 }
 
 .deco-item {
@@ -264,7 +385,13 @@ body::before {
 /* 特色产品 */
 .featured-section {
     padding: 80px 0;
-    background: var(--bg-light);
+    background:
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80"><text x="25" y="55" font-size="40" fill="rgba(255,179,217,0.05)" transform="rotate(-20 40 40)">🍓</text></svg>') 2% 10%/80px 80px,
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80"><text x="25" y="55" font-size="40" fill="rgba(255,212,163,0.05)" transform="rotate(20 40 40)">🥧</text></svg>') 98% 90%/80px 80px,
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><text x="15" y="40" font-size="30" fill="rgba(255,192,229,0.03)">🍭</text></svg>') 10% 80%/60px 60px,
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><text x="15" y="40" font-size="30" fill="rgba(255,179,217,0.03)">🧁</text></svg>') 90% 20%/60px 60px,
+        var(--bg-light);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat;
     position: relative;
     overflow: hidden;
 }
@@ -335,12 +462,13 @@ body::before {
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.3));
     color: white;
     padding: 2rem 1rem 1.5rem;
     transform: translateY(100%);
     transition: transform 0.3s ease;
     text-align: center;
+    backdrop-filter: blur(8px);
 }
 
 .featured-card:hover .card-overlay {
@@ -355,9 +483,10 @@ body::before {
 
 .card-overlay .price {
     font-size: 1.4rem;
-    color: var(--secondary-color);
+    color: #ffd4a3;
     font-weight: bold;
     margin: 0.5rem 0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
 .card-overlay .description {
@@ -397,7 +526,14 @@ body::before {
 /* 产品分类 */
 .products-section {
     padding: 80px 0;
-    background: white;
+    background:
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><text x="35" y="65" font-size="50" fill="rgba(255,212,163,0.03)" transform="rotate(15 50 50)">🎂</text></svg>') 5% 15%/100px 100px,
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><text x="35" y="65" font-size="50" fill="rgba(255,179,217,0.03)" transform="rotate(-15 50 50)">🍰</text></svg>') 95% 85%/100px 100px,
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80"><text x="25" y="55" font-size="40" fill="rgba(255,192,229,0.02)">🍮</text></svg>') 25% 75%/80px 80px,
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80"><text x="25" y="55" font-size="40" fill="rgba(255,212,163,0.02)">🍪</text></svg>') 75% 25%/80px 80px,
+        white;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat;
+    position: relative;
 }
 
 .category-tabs {
@@ -483,13 +619,13 @@ body::before {
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(to top, rgba(255, 179, 217, 0.95), rgba(255, 192, 229, 0.8));
+    background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.3));
     color: white;
     padding: 1.5rem 1rem;
     transform: translateY(100%);
     transition: transform 0.3s ease;
     text-align: center;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(8px);
 }
 
 .product-card:hover .product-overlay {
@@ -506,9 +642,9 @@ body::before {
 
 .product-overlay .price {
     font-size: 1.3rem;
-    color: var(--secondary-color);
+    color: #ffd4a3;
     font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
 
@@ -516,7 +652,13 @@ body::before {
 /* 关于我们 */
 .about-section {
     padding: 80px 0;
-    background: var(--bg-light);
+    background:
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" viewBox="0 0 90 90"><text x="30" y="60" font-size="45" fill="rgba(255,179,217,0.04)" transform="rotate(25 45 45)">🍭</text></svg>') 3% 20%/90px 90px,
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" viewBox="0 0 90 90"><text x="30" y="60" font-size="45" fill="rgba(255,212,163,0.04)" transform="rotate(-25 45 45)">🍮</text></svg>') 97% 80%/90px 90px,
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70"><text x="20" y="45" font-size="35" fill="rgba(255,192,229,0.03)">🥧</text></svg>') 20% 90%/70px 70px,
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70"><text x="20" y="45" font-size="35" fill="rgba(255,179,217,0.03)">🍩</text></svg>') 80% 10%/70px 70px,
+        var(--bg-light);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat;
     position: relative;
 }
 
